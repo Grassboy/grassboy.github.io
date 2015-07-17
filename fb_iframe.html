@@ -14,9 +14,25 @@
 	<link rel="shortcut icon" href="/favicon.ico" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
 	<title>dubStep 用來拿 accessToken 的頁面</title>
+    <style>
+        .ds-start {
+            float: left;
+            color: #FFF;
+            font-size: 24px;
+            background-color: #4E69A2;
+            border: 1px solid;
+            border-radius: 5px;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+            font-family: "helvetica neue",helvetica,arial,"lucida grande","微軟正黑體",sans-serif;
+            position: relative;
+            padding: 5px;
+            text-align: center;
+            vertical-align: middle;
+        }    
+    </style>
 </head>
 <body>
-<button style="display:none;">Start 開始讀取</button>
+<button class="ds-start" style="display:none;">Start 開始讀取</button>
 <script>
     window.fbAsyncInit = function() {
         FB.init({
