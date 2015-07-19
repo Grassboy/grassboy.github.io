@@ -205,6 +205,18 @@ html, body {
 }
 
 /* line 126, ../sass/in_facebook.scss */
+.ds-retry {
+  display: none;
+  background: none;
+  border: none;
+  text-decoration: underline;
+}
+/* line 131, ../sass/in_facebook.scss */
+.ds-end-process .ds-retry {
+  display: inline-block;
+}
+
+/* line 135, ../sass/in_facebook.scss */
 .ds-description {
   float: left;
   width: 50%;
@@ -216,13 +228,13 @@ html, body {
   letter-spacing: 2px;
   height: 144px;
 }
-/* line 143, ../sass/in_facebook.scss */
+/* line 152, ../sass/in_facebook.scss */
 .ds-start-process .ds-description {
   height: 0;
   margin-bottom: 0;
   opacity: 0;
 }
-/* line 148, ../sass/in_facebook.scss */
+/* line 157, ../sass/in_facebook.scss */
 .ds-description a {
   text-decoration: none;
   color: #2456D2;
@@ -230,13 +242,13 @@ html, body {
   font-weight: bold;
   margin: auto 5px;
 }
-/* line 154, ../sass/in_facebook.scss */
+/* line 163, ../sass/in_facebook.scss */
 .ds-description a:hover {
   color: #7093EA;
   text-shadow: 0 0 5px rgba(112, 147, 234, 0.5);
 }
 
-/* line 160, ../sass/in_facebook.scss */
+/* line 169, ../sass/in_facebook.scss */
 .ds-processing {
   float: left;
   width: 500px;
@@ -245,11 +257,11 @@ html, body {
   overflow: hidden;
   display: none;
 }
-/* line 167, ../sass/in_facebook.scss */
+/* line 176, ../sass/in_facebook.scss */
 .ds-start-process .ds-processing {
   display: block;
 }
-/* line 170, ../sass/in_facebook.scss */
+/* line 179, ../sass/in_facebook.scss */
 .ds-processing:before, .ds-processing:after {
   display: block;
   width: auto;
@@ -260,13 +272,13 @@ html, body {
   background-repeat: no-repeat;
   background-position: left center;
 }
-/* line 180, ../sass/in_facebook.scss */
+/* line 189, ../sass/in_facebook.scss */
 .ds-processing:before {
   content: attr(data-success-msg);
   background-image: url(../images/success.png?123);
   bottom: 2em;
 }
-/* line 185, ../sass/in_facebook.scss */
+/* line 194, ../sass/in_facebook.scss */
 .ds-processing:after {
   content: attr(data-fail-msg);
   background-image: url(../images/fail.png?123);
@@ -274,91 +286,91 @@ html, body {
 }
 
 @-webkit-keyframes rotate {
-  /* line 192, ../sass/in_facebook.scss */
+  /* line 201, ../sass/in_facebook.scss */
   0%, 50%, 100% {
     transform: rotate(0deg) scale(0.8);
   }
 
-  /* line 195, ../sass/in_facebook.scss */
+  /* line 204, ../sass/in_facebook.scss */
   25% {
     transform: rotate(-5deg) scale(0.8);
   }
 
-  /* line 198, ../sass/in_facebook.scss */
+  /* line 207, ../sass/in_facebook.scss */
   75% {
     transform: rotate(5deg) scale(0.8);
   }
 
-  /* line 201, ../sass/in_facebook.scss */
+  /* line 210, ../sass/in_facebook.scss */
   0%,50%,100% {
     margin-top: 0px;
   }
 
-  /* line 202, ../sass/in_facebook.scss */
+  /* line 211, ../sass/in_facebook.scss */
   25%,75% {
     margin-top: -10px;
   }
 }
 
 @keyframes rotate {
-  /* line 192, ../sass/in_facebook.scss */
+  /* line 201, ../sass/in_facebook.scss */
   0%, 50%, 100% {
     transform: rotate(0deg) scale(0.8);
   }
 
-  /* line 195, ../sass/in_facebook.scss */
+  /* line 204, ../sass/in_facebook.scss */
   25% {
     transform: rotate(-5deg) scale(0.8);
   }
 
-  /* line 198, ../sass/in_facebook.scss */
+  /* line 207, ../sass/in_facebook.scss */
   75% {
     transform: rotate(5deg) scale(0.8);
   }
 
-  /* line 201, ../sass/in_facebook.scss */
+  /* line 210, ../sass/in_facebook.scss */
   0%,50%,100% {
     margin-top: 0px;
   }
 
-  /* line 202, ../sass/in_facebook.scss */
+  /* line 211, ../sass/in_facebook.scss */
   25%,75% {
     margin-top: -10px;
   }
 }
 
 @-webkit-keyframes rotate2 {
-  /* line 205, ../sass/in_facebook.scss */
+  /* line 214, ../sass/in_facebook.scss */
   0% {
     transform: rotateY(0deg) rotateX(70deg);
   }
 
-  /* line 206, ../sass/in_facebook.scss */
+  /* line 215, ../sass/in_facebook.scss */
   100% {
     transform: rotateY(360deg) rotateX(70deg);
   }
 }
 
 @keyframes rotate2 {
-  /* line 205, ../sass/in_facebook.scss */
+  /* line 214, ../sass/in_facebook.scss */
   0% {
     transform: rotateY(0deg) rotateX(70deg);
   }
 
-  /* line 206, ../sass/in_facebook.scss */
+  /* line 215, ../sass/in_facebook.scss */
   100% {
     transform: rotateY(360deg) rotateX(70deg);
   }
 }
 
 @-webkit-keyframes fetch_success2 {
-  /* line 209, ../sass/in_facebook.scss */
+  /* line 218, ../sass/in_facebook.scss */
   0%, 50% {
     transform: translate3D(0, 0, 0) scale(0.8);
     opacity: 1;
   }
 
-  /* line 213, ../sass/in_facebook.scss */
+  /* line 222, ../sass/in_facebook.scss */
   100% {
     transform: translate3D(0, -20px, 0) scale(1);
     opacity: 0;
@@ -366,13 +378,13 @@ html, body {
 }
 
 @keyframes fetch_success2 {
-  /* line 209, ../sass/in_facebook.scss */
+  /* line 218, ../sass/in_facebook.scss */
   0%, 50% {
     transform: translate3D(0, 0, 0) scale(0.8);
     opacity: 1;
   }
 
-  /* line 213, ../sass/in_facebook.scss */
+  /* line 222, ../sass/in_facebook.scss */
   100% {
     transform: translate3D(0, -20px, 0) scale(1);
     opacity: 0;
@@ -380,13 +392,13 @@ html, body {
 }
 
 @-webkit-keyframes fetch_fail2 {
-  /* line 219, ../sass/in_facebook.scss */
+  /* line 228, ../sass/in_facebook.scss */
   0%, 50% {
     transform: translate3D(0, 0, 0) scale(0.8);
     opacity: 1;
   }
 
-  /* line 223, ../sass/in_facebook.scss */
+  /* line 232, ../sass/in_facebook.scss */
   100% {
     transform: rotateX(90deg) scale(1);
     opacity: 0;
@@ -394,13 +406,13 @@ html, body {
 }
 
 @keyframes fetch_fail2 {
-  /* line 219, ../sass/in_facebook.scss */
+  /* line 228, ../sass/in_facebook.scss */
   0%, 50% {
     transform: translate3D(0, 0, 0) scale(0.8);
     opacity: 1;
   }
 
-  /* line 223, ../sass/in_facebook.scss */
+  /* line 232, ../sass/in_facebook.scss */
   100% {
     transform: rotateX(90deg) scale(1);
     opacity: 0;
@@ -408,27 +420,27 @@ html, body {
 }
 
 @-webkit-keyframes fetch_success {
-  /* line 229, ../sass/in_facebook.scss */
+  /* line 238, ../sass/in_facebook.scss */
   0%, 20%, 40%, 60% {
     transform: translate3D(0, 0, 0) scale(0.8);
   }
 
-  /* line 232, ../sass/in_facebook.scss */
+  /* line 241, ../sass/in_facebook.scss */
   10%, 30%, 50% {
     transform: translate3D(0, -20px, 0) scale(0.8);
   }
 
-  /* line 235, ../sass/in_facebook.scss */
+  /* line 244, ../sass/in_facebook.scss */
   0%, 80% {
     opacity: 1;
   }
 
-  /* line 238, ../sass/in_facebook.scss */
+  /* line 247, ../sass/in_facebook.scss */
   80% {
     transform: scale(0.8);
   }
 
-  /* line 241, ../sass/in_facebook.scss */
+  /* line 250, ../sass/in_facebook.scss */
   100% {
     opacity: 0;
     transform: translate3D(0, -50px, 0) scale(1);
@@ -436,27 +448,27 @@ html, body {
 }
 
 @keyframes fetch_success {
-  /* line 229, ../sass/in_facebook.scss */
+  /* line 238, ../sass/in_facebook.scss */
   0%, 20%, 40%, 60% {
     transform: translate3D(0, 0, 0) scale(0.8);
   }
 
-  /* line 232, ../sass/in_facebook.scss */
+  /* line 241, ../sass/in_facebook.scss */
   10%, 30%, 50% {
     transform: translate3D(0, -20px, 0) scale(0.8);
   }
 
-  /* line 235, ../sass/in_facebook.scss */
+  /* line 244, ../sass/in_facebook.scss */
   0%, 80% {
     opacity: 1;
   }
 
-  /* line 238, ../sass/in_facebook.scss */
+  /* line 247, ../sass/in_facebook.scss */
   80% {
     transform: scale(0.8);
   }
 
-  /* line 241, ../sass/in_facebook.scss */
+  /* line 250, ../sass/in_facebook.scss */
   100% {
     opacity: 0;
     transform: translate3D(0, -50px, 0) scale(1);
@@ -464,27 +476,27 @@ html, body {
 }
 
 @-webkit-keyframes fetch_fail {
-  /* line 247, ../sass/in_facebook.scss */
+  /* line 256, ../sass/in_facebook.scss */
   0%, 10%, 20%, 30% {
     transform: translate3D(0, 0, 0) scale(0.8);
   }
 
-  /* line 250, ../sass/in_facebook.scss */
+  /* line 259, ../sass/in_facebook.scss */
   5%, 15%, 25% {
     transform: translate3D(5px, 0, 0) scale(0.8);
   }
 
-  /* line 253, ../sass/in_facebook.scss */
+  /* line 262, ../sass/in_facebook.scss */
   0%, 50% {
     opacity: 1;
   }
 
-  /* line 256, ../sass/in_facebook.scss */
+  /* line 265, ../sass/in_facebook.scss */
   50% {
     transform: scale(0.8);
   }
 
-  /* line 259, ../sass/in_facebook.scss */
+  /* line 268, ../sass/in_facebook.scss */
   100% {
     opacity: 0;
     transform: scale(0.4);
@@ -492,34 +504,34 @@ html, body {
 }
 
 @keyframes fetch_fail {
-  /* line 247, ../sass/in_facebook.scss */
+  /* line 256, ../sass/in_facebook.scss */
   0%, 10%, 20%, 30% {
     transform: translate3D(0, 0, 0) scale(0.8);
   }
 
-  /* line 250, ../sass/in_facebook.scss */
+  /* line 259, ../sass/in_facebook.scss */
   5%, 15%, 25% {
     transform: translate3D(5px, 0, 0) scale(0.8);
   }
 
-  /* line 253, ../sass/in_facebook.scss */
+  /* line 262, ../sass/in_facebook.scss */
   0%, 50% {
     opacity: 1;
   }
 
-  /* line 256, ../sass/in_facebook.scss */
+  /* line 265, ../sass/in_facebook.scss */
   50% {
     transform: scale(0.8);
   }
 
-  /* line 259, ../sass/in_facebook.scss */
+  /* line 268, ../sass/in_facebook.scss */
   100% {
     opacity: 0;
     transform: scale(0.4);
   }
 }
 
-/* line 264, ../sass/in_facebook.scss */
+/* line 273, ../sass/in_facebook.scss */
 .ds-friend {
   border-radius: 200px;
   background: #3d5a99;
@@ -533,7 +545,7 @@ html, body {
   animation: rotate 1.5s infinite linear;
   transition: left 1s ease-in, top 1s ease-in, opacity 0.3s ease-in;
 }
-/* line 280, ../sass/in_facebook.scss */
+/* line 289, ../sass/in_facebook.scss */
 .ds-friend:nth-child(1) {
   opacity: 1;
   left: 0px;
@@ -541,7 +553,7 @@ html, body {
   animation-duration: 1.4s;
   z-index: 5;
 }
-/* line 287, ../sass/in_facebook.scss */
+/* line 296, ../sass/in_facebook.scss */
 .ds-friend:nth-child(2) {
   opacity: 1;
   left: 280px;
@@ -549,7 +561,7 @@ html, body {
   animation-duration: 1.5s;
   z-index: 4;
 }
-/* line 294, ../sass/in_facebook.scss */
+/* line 303, ../sass/in_facebook.scss */
 .ds-friend:nth-child(3) {
   opacity: 1;
   left: 320px;
@@ -557,7 +569,7 @@ html, body {
   animation-duration: 1.6s;
   z-index: 3;
 }
-/* line 301, ../sass/in_facebook.scss */
+/* line 310, ../sass/in_facebook.scss */
 .ds-friend:nth-child(4) {
   opacity: 1;
   left: 370px;
@@ -565,7 +577,7 @@ html, body {
   animation-duration: 1.4s;
   z-index: 2;
 }
-/* line 308, ../sass/in_facebook.scss */
+/* line 317, ../sass/in_facebook.scss */
 .ds-friend:nth-child(5) {
   transition: none;
   opacity: 0;
@@ -574,7 +586,7 @@ html, body {
   animation-duration: 1.7s;
   z-index: 1;
 }
-/* line 316, ../sass/in_facebook.scss */
+/* line 325, ../sass/in_facebook.scss */
 .ds-friend:before {
   content: ' ';
   position: absolute;
@@ -591,7 +603,7 @@ html, body {
   z-index: 10;
   box-shadow: -3px -3 3px 3px black inset, -3px -3 3px 3px black inset;
 }
-/* line 342, ../sass/in_facebook.scss */
+/* line 351, ../sass/in_facebook.scss */
 .ds-friend:after {
   content: ' ';
   transition: transform 0.3s ease-in;
@@ -605,7 +617,7 @@ html, body {
   margin-left: -15px;
   animation: rotate2 2s infinite linear;
 }
-/* line 354, ../sass/in_facebook.scss */
+/* line 363, ../sass/in_facebook.scss */
 .ds-friend.ds-fetch-success {
   opacity: 1;
   left: 0px;
@@ -613,7 +625,7 @@ html, body {
   z-index: 5;
   animation: fetch_success 1s 1 ease-out normal forwards;
 }
-/* line 360, ../sass/in_facebook.scss */
+/* line 369, ../sass/in_facebook.scss */
 .ds-friend.ds-fetch-success:after {
   transition: none;
   background-image: url(../images/success.png?123);
@@ -627,7 +639,7 @@ html, body {
   margin-left: -48px;
   bottom: -20px;
 }
-/* line 373, ../sass/in_facebook.scss */
+/* line 382, ../sass/in_facebook.scss */
 .ds-friend.ds-fetch-fail {
   opacity: 1;
   left: 0px;
@@ -635,7 +647,7 @@ html, body {
   z-index: 5;
   animation: fetch_fail 1s 1 ease-out normal forwards;
 }
-/* line 379, ../sass/in_facebook.scss */
+/* line 388, ../sass/in_facebook.scss */
 .ds-friend.ds-fetch-fail:after {
   transition: none;
   background-image: url(../images/fail.png?123);
@@ -649,7 +661,7 @@ html, body {
   margin-left: -48px;
   bottom: -20px;
 }
-/* line 392, ../sass/in_facebook.scss */
+/* line 401, ../sass/in_facebook.scss */
 .ds-friend .ds-thumb {
   float: left;
   width: 100px;
@@ -659,7 +671,7 @@ html, body {
 }
 
 @media screen and (min-width: 1240px) {
-  /* line 404, ../sass/in_facebook.scss */
+  /* line 413, ../sass/in_facebook.scss */
   .ds-logo {
     width: 496px;
     height: 496px;
@@ -672,12 +684,12 @@ html, body {
   }
 }
 @media screen and (max-width: 1000px) {
-  /* line 414, ../sass/in_facebook.scss */
+  /* line 423, ../sass/in_facebook.scss */
   .ds-container {
     align-items: flex-start;
   }
 
-  /* line 417, ../sass/in_facebook.scss */
+  /* line 426, ../sass/in_facebook.scss */
   .ds-logo {
     float: none;
     margin: auto;
@@ -685,37 +697,37 @@ html, body {
     margin-bottom: -50px;
   }
 
-  /* line 423, ../sass/in_facebook.scss */
+  /* line 432, ../sass/in_facebook.scss */
   .ds-body {
     margin-top: 20%;
     text-align: center;
     height: auto;
   }
 
-  /* line 428, ../sass/in_facebook.scss */
+  /* line 437, ../sass/in_facebook.scss */
   .ds-title {
     float: none;
     width: 100%;
     z-index: 1;
     text-align: center;
   }
-  /* line 433, ../sass/in_facebook.scss */
+  /* line 442, ../sass/in_facebook.scss */
   .ds-title h1 {
     line-height: normal;
     font-weight: bold;
     color: #4B66A0;
     text-shadow: 0 -2px 0 #BBB;
   }
-  /* line 438, ../sass/in_facebook.scss */
+  /* line 447, ../sass/in_facebook.scss */
   .ds-title h1:after {
     content: '';
   }
-  /* line 442, ../sass/in_facebook.scss */
+  /* line 451, ../sass/in_facebook.scss */
   .ds-title h2 {
     transform: none;
   }
 
-  /* line 446, ../sass/in_facebook.scss */
+  /* line 455, ../sass/in_facebook.scss */
   .ds-description {
     float: none;
     text-align: left;
@@ -724,13 +736,13 @@ html, body {
     margin: 20px auto;
   }
 
-  /* line 453, ../sass/in_facebook.scss */
+  /* line 462, ../sass/in_facebook.scss */
   .ds-start, .ds-download {
     float: none;
     margin-top: 20px;
   }
 
-  /* line 457, ../sass/in_facebook.scss */
+  /* line 466, ../sass/in_facebook.scss */
   .ds-processing {
     float: none;
     width: 500px;
