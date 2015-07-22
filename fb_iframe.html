@@ -41,7 +41,7 @@
     </style>
 </head>
 <body>
-<button class="ds-start" style="display:none;">Start 開始讀取</button>
+<button class="ds-start" style="visibility:hidden;">Start 開始讀取</button>
 <script>
     window.fbAsyncInit = function() {
         FB.init({
@@ -52,11 +52,11 @@
         FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
                 var accessToken = response.authResponse.accessToken;
-                $('button').show().click(function(){
+                $('button').attr('style', null).click(function(){
                     window.parent.postMessage('{"accessToken":"'+accessToken+'"}', 'https://www.facebook.com');
                 });
             } else {
-                $('button').show().click(function(){
+                $('button').attr('style', null).click(function(){
                     FB.login(function(response) {
                         if (response.authResponse) {
                             var accessToken = response.authResponse.accessToken;
