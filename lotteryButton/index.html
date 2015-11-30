@@ -52,19 +52,13 @@
     if(is_ok) {
         var firebase_conf = {   //Firebase 的設定檔
             server: config[1],
+            check: 'auth/check/',
             get: 'auth/draw/',
             response: 'auth/gua_result/'
         };
 
-        var pass = localStorage['pass'];
-        if(!pass) {
-            pass = localStorage['pass'] = prompt('請輸入同步機制所需的密碼');
-        }
         var myFirebaseRef = new Firebase(config[1]);
-        myFirebaseRef.authWithPassword({
-            email: config[2],
-            password: pass
-        }, function (error, authData) { /* Your Code */
+        var authCallback = function (error, authData) {
             if(error){
                 delete localStorage['pass'];
                 alert('登入失敗，可能是密碼有誤，請重新整理後再輸入密碼');
@@ -100,8 +94,24 @@
                     });
                 });
             }
-        }, {
-            remember: 'sessionOnly'
+        };
+
+        myFirebaseRef.child(firebase_conf.check).push({test: (new Date()).getTime()}, function(error){
+            if(error) {
+                var pass = localStorage['pass'];
+                if(!pass) {
+                    pass = localStorage['pass'] = prompt('請輸入同步機制所需的密碼');
+                }
+                myFirebaseRef.authWithPassword({
+                    email: config[2],
+                    password: pass
+                }, authCallback, {
+                    remember: 'sessionOnly'
+                });
+            } else {
+                authCallback();
+                alert('注意，您的 firebase 設定尚未修改，\n所以應該是位於 demo 模式下\ndemo 模式下的同步機制不保證永遠有效，\n請至設定頁設定您自己的 firebase 主機、帳號資訊');
+            }
         });
 
         (function(){
