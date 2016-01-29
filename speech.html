@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="" />
 	<meta property="og:title" content="Google 發音測試" />
@@ -18,21 +19,34 @@
             alert(c);
         }
     </script>
+    <style>
+        .ing, .final {
+            border: 1px solid #FFC;
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
 	<h1>Google 發音測試</h1>
-	<div></div>
+	<div class="ing">123</div>
+	<div class="final">123</div>
 <script>
 $(document).bind('click', function(){
     var recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
-    recognition.interimResults = true;
-    var recognition = new webkitSpeechRecognition();
-    recognition.lang = "zh-TW";
-    recognition.onresult = function(event) { 
-        document.body.innerHTML = JSON.stringify(event);
+    recognition.lang = 'cmn-Hant-TW';
+    recognition.onresult = function(e) { 
+        document.body.innerHTML += JSON.stringify(e.results && e.results[0]);
     }
-    alert(123);
+    recognition.onresult = function(event) {
+        var interim_transcript ='', final_transcript = '';
+        for (var i = event.resultIndex; i < event.results.length; ++i) {
+            if (event.results[i].isFinal) {
+                final_transcript = event.results[i][0].transcript;
+            }
+        }
+        $('.final').html(final_transcript);
+    };
     recognition.start();
 });
 
