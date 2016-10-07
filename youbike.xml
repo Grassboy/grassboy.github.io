@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+  <meta>
+  <author>Grassboy</author>
+  <description>Get Ubike Stations</description>
+  <sampleQuery><![CDATA[ 
+select * from {table} where
+url='http://isithackday.com/hacks/htmlpost/index.php' 
+and postdata="foo=foo&bar=bar" and xpath="//p" and contenttype="application/x-www-form-urlencoded"
+]]></sampleQuery>
+  <documentationURL></documentationURL>
+  </meta>
+  <bindings>
+    <select itemPath="" produces="XML">
+    <urls>
+      <url>{url}</url>
+    </urls>
+    <inputs>
+      <key id="name" type="xs:string" required="false" paramType="variable"/>
+      <key id="near" type="xs:string" required="false" paramType="variable"/>
+    </inputs>
+    <execute>
+    <![CDATA[
+        //{{ from: http://stackoverflow.com/questions/27928/calculate-distance-between-two-latitude-longitude-points-haversine-formula
+
+        function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+            var R = 6371; // Radius of the earth in km
+            var dLat = deg2rad(lat2 - lat1); // deg2rad below
+            var dLon = deg2rad(lon2 - lon1);
+            var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            var d = R * c; // Distance in km
+            return d;
+        }
+        function deg2rad(deg) {
+            return deg * (Math.PI / 180)
+        }
+
+        //}}
+
+        var myRequest = y.rest('https://ybapp01.youbike.com.tw/get_gwjs.php');
+        var data = myRequest.accept('text/json').
+            contentType('application/x-www-form-urlencoded; charset=UTF-8').
+            post('sid=123&account=microprogram&passwd=23692699&local=taipei&type=all').response;
+        var result = <container></container>;
+        for (var i = 0; !!(data.retVal[i]); ++i) {
+            var match_name = true, match_center = true;
+            match_name = !name || (data.retVal[i].sna.indexOf(name)!=-1);
+            match_center = !near || (function(s, near){
+                var xy = near.split(',');
+                var lng_c = parseFloat(xy[0]);
+                var lat_c = parseFloat(xy[1]);
+                var lng = parseFloat(s.lng);
+                var lat = parseFloat(s.lat);
+                return getDistanceFromLatLonInKm(lat, lng, lat_c, lng_c) < 0.5;
+            })(data.retVal[i], near)
+            if(match_name && match_center){
+                result.appendChild(data.retVal[i]);
+            }
+        }
+        result = y.xpath(result, '//*/retVal');
+        response.object = <ubike>{result}</ubike>;
+        //response.object = y.xpath(response.object, '//*/retVal');
+    ]]>
+    </execute>
+  </select> 
+  </bindings>
+</table>
+
