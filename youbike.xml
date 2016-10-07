@@ -4,9 +4,9 @@
   <author>Grassboy</author>
   <description>Get Ubike Stations</description>
   <sampleQuery><![CDATA[ 
-select * from {table} where
-url='http://isithackday.com/hacks/htmlpost/index.php' 
-and postdata="foo=foo&bar=bar" and xpath="//p" and contenttype="application/x-www-form-urlencoded"
+select * from ubike;
+select * from ubike where name='捷運';
+select * from ubike where near='121.532934,25.058369';
 ]]></sampleQuery>
   <documentationURL></documentationURL>
   </meta>
