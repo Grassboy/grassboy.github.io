@@ -21,7 +21,7 @@ for(var i = 0; i < n1; i++){
 			d[name.substr(5)] = value;
 		}
 	}
-	var result_url = ['http://grassboy.tw/plurkTool/push_button/?get'];
+	var result_url = ['//grassboy.tw/plurkTool/push_button/?get'];
 	d = btn.dataset;
 	d.status = d.status || "{url}";
 	result_url.push("&href=", encodeURIComponent(d.href));
